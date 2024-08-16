@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイクラ偽チャット</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>マイクラ偽チャット</h1>
+    <div>
+        <label><input type="radio" name="version" value="bedrock" checked> 統合版</label>
+        <label><input type="radio" name="version" value="java"> Java版</label>
+    </div>
+    <div id="bedrock" class="version-form">
+        <h2>統合版</h2>
+        <label>OP権限:
+            <select id="bedrock-op">
+                <option value="false">ない</option>
+                <option value="true">ある</option>
+            </select>
+        </label>
+        <div id="bedrock-op-form">
+            <label>ユーザー名: <input type="text" id="bedrock-username"></label>
+            <label>チャット内容: <input type="text" id="bedrock-message"></label>
+            <label>セレクター:
+                <select id="bedrock-selector">
+                    <option value="@a">@a</option>
+                    <option value="@p">@p</option>
+                    <option value="@s">@s</option>
+                    <option value="<プレイヤー名>">&lt;プレイヤー名&gt;</option>
+                </select>
+            </label>
+            <div id="bedrock-player-name-form" class="hidden">
+                <label>プレイヤー名: <input type="text" id="bedrock-player-name"></label>
+            </div>
+        </div>
+        <div id="bedrock-no-op-form">
+            <label>チャット内容: <input type="text" id="bedrock-no-op-message"></label>
+        </div>
+    </div>
+    <div id="java" class="version-form">
+        <h2>Java版</h2>
+        <label>OP権限:
+            <select id="java-op">
+                <option value="false">ない</option>
+                <option value="true">ある</option>
+            </select>
+        </label>
+        <div id="java-op-form">
+            <label>ユーザー名: <input type="text" id="java-username"></label>
+            <label>チャット内容: <input type="text" id="java-message"></label>
+            <label>LunaChat変換後: <input type="text" id="java-lunachat"></label>
+            <label>セレクター:
+                <select id="java-selector">
+                    <option value="@a">@a</option>
+                    <option value="@p">@p</option>
+                    <option value="@s">@s</option>
+                    <option value="<プレイヤー名>">&lt;プレイヤー名&gt;</option>
+                </select>
+            </label>
+            <div id="java-player-name-form" class="hidden">
+                <label>プレイヤー名: <input type="text" id="java-player-name"></label>
+            </div>
+            <button id="edit-detail-btn">詳細編集</button>
+            <div id="java-detail-edit" class="hidden">
+                <label>ユーザー名とメッセージの間のカンマ:
+                    <input type="text" id="java-detail-edit-value" value=":">
+                </label>
+            </div>
+        </div>
+        <div id="java-no-op-form">
+            <label>チャット内容: <input type="text" id="java-no-op-message"></label>
+            <label>LunaChat変換後: <input type="text" id="java-no-op-lunachat"></label>
+        </div>
+    </div>
+    <h2>生成されたコマンド</h2>
+    <pre id="command-output"></pre>
+    <button id="copy-btn">コピー</button>
+    <script src="scripts.js"></script>
+</body>
+</html>
